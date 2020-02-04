@@ -12,13 +12,12 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
-        UserDefaults.standard.set(false, forKey: "userLoggedIn" )
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,9 +25,9 @@ class HomeTableViewController: UITableViewController {
         
         cell.userNameLabel.text = "Some name"
         cell.tweetContent.text = "Something else"
-        
         return cell
     }
+    
     
     // MARK: - Table view data source
 

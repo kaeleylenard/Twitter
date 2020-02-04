@@ -56,44 +56,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier=" tweetCell" rowHeight="120" id="cEg-51-Pa4" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="cEg-51-Pa4" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cEg-51-Pa4" id="MOG-FJ-hUC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAx-Yl-QUM">
-                                            <rect key="frame" x="16" y="7" width="78" height="77"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zYS-Wx-CSv">
+                                            <rect key="frame" x="16" y="11" width="65" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="AtJ-KF-wTJ"/>
-                                                <constraint firstAttribute="width" constant="65" id="zq8-8E-Kkj"/>
+                                                <constraint firstAttribute="height" constant="65" id="FNt-jj-zqM"/>
+                                                <constraint firstAttribute="width" constant="65" id="LKW-pW-HYg"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="Oqg-ZO-NzH"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="RBE-f6-KFA"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Kaeley Lenard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bA-IX-px4">
-                                            <rect key="frame" x="102" y="8" width="122" height="22"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AS7-cS-dAu">
+                                            <rect key="frame" x="89" y="41" width="270" height="68"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="68" id="c0v-eQ-jCm"/>
+                                                <constraint firstAttribute="width" constant="270" id="xP6-v2-MUv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-mC-sVD">
-                                            <rect key="frame" x="102" y="35" width="257" height="74"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaeley Lenard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMA-ET-UJX">
+                                            <rect key="frame" x="89" y="11" width="122" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4bA-IX-px4" firstAttribute="top" secondItem="MOG-FJ-hUC" secondAttribute="top" id="7sp-XX-Yb9"/>
-                                        <constraint firstItem="4bA-IX-px4" firstAttribute="top" secondItem="MOG-FJ-hUC" secondAttribute="top" constant="8" id="gvi-Xz-vgP"/>
-                                        <constraint firstItem="4bA-IX-px4" firstAttribute="leading" secondItem="DAx-Yl-QUM" secondAttribute="trailing" constant="8" id="oqD-Vc-TDP"/>
+                                        <constraint firstItem="GMA-ET-UJX" firstAttribute="leading" secondItem="zYS-Wx-CSv" secondAttribute="trailing" constant="8" id="2LR-Nk-R4y"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="trailing" secondItem="MOG-FJ-hUC" secondAttribute="trailingMargin" id="3u8-4l-lAE"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="bottom" secondItem="MOG-FJ-hUC" secondAttribute="bottomMargin" id="5gn-NZ-aF1"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="leading" secondItem="zYS-Wx-CSv" secondAttribute="trailing" constant="8" id="6Xu-pC-mV1"/>
+                                        <constraint firstItem="zYS-Wx-CSv" firstAttribute="top" secondItem="GMA-ET-UJX" secondAttribute="top" id="KFC-9o-SDC"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="top" secondItem="GMA-ET-UJX" secondAttribute="bottom" constant="4" id="Nqe-f2-szz"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="trailing" secondItem="MOG-FJ-hUC" secondAttribute="trailingMargin" id="V7c-Sq-KXB"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="top" secondItem="GMA-ET-UJX" secondAttribute="bottom" constant="4" id="Vt9-BF-kM5"/>
+                                        <constraint firstItem="GMA-ET-UJX" firstAttribute="top" secondItem="MOG-FJ-hUC" secondAttribute="topMargin" id="Wx0-jJ-nO0"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="top" secondItem="GMA-ET-UJX" secondAttribute="bottom" constant="8" id="fZh-7d-Xax"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="leading" secondItem="zYS-Wx-CSv" secondAttribute="trailing" constant="8" id="igT-fN-qIb"/>
+                                        <constraint firstItem="GMA-ET-UJX" firstAttribute="leading" secondItem="zYS-Wx-CSv" secondAttribute="trailing" constant="8" id="yId-5C-MNI"/>
+                                        <constraint firstItem="AS7-cS-dAu" firstAttribute="leading" secondItem="zYS-Wx-CSv" secondAttribute="trailing" constant="8" id="yjD-WT-Zjs"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="profileImageView" destination="DAx-Yl-QUM" id="W1x-Gq-mB2"/>
-                                    <outlet property="tweetContent" destination="GoW-mC-sVD" id="eu1-Nn-6Ry"/>
-                                    <outlet property="userNameLabel" destination="4bA-IX-px4" id="0gl-Ks-oHt"/>
+                                    <outlet property="profileImageView" destination="zYS-Wx-CSv" id="fIW-q5-Mn3"/>
+                                    <outlet property="tweetContent" destination="AS7-cS-dAu" id="DjD-hc-iak"/>
+                                    <outlet property="userNameLabel" destination="GMA-ET-UJX" id="zlE-xN-2T9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,7 +121,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Ncp-Xt-6ap">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="onLogout:" destination="8Fz-8m-q7h" id="lOE-Ql-rba"/>
+                                <action selector="onLogout:" destination="8Fz-8m-q7h" id="sAY-rU-dKO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
