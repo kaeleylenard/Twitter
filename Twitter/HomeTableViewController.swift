@@ -22,7 +22,7 @@ class HomeTableViewController: UITableViewController {
         tableView.refreshControl = myRefreshControl
         
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 150
+        self.tableView.estimatedRowHeight = 136
     }
     
     override func viewDidAppear(_ animated: Bool) {

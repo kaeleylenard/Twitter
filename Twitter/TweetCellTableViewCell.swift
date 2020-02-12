@@ -17,25 +17,56 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     
     var favorited:Bool = false
+    var isRetweeted: Bool = false
+    
     var tweetId:Int = -1
     
     @IBAction func favoriteTweet(_ sender: Any) {
+        
+        //what is this
         let toBeFavorited = !favorited
+        
+        
         if (toBeFavorited) {
-            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {self.setFavorite(true)}, failure: {(error) in print("Favorite did not succeed: \(error)")})
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
+                self.setFavorite(true)
+                print("Successful Favorite")
+            }, failure: {(error) in print("Favorite did not succeed: \(error)")})
         } else {
-            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {self.setFavorite(false)}, failure: {(error) in print("Unfavorite did not succeed: \(error)")})
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
+                self.setFavorite(false)
+                print("successful UN-Favorite")
+            }, failure: {(error) in print("Unfavorite did not succeed: \(error)")})
         }
     }
     @IBAction func retweet(_ sender: Any) {
-        TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {self.setRetweeted(true)}, failure: { (error) in print("Error is retweeting: \(error)")})
+        
+        let toBeRetweeted = !isRetweeted
+        
+        //determine if the retweet image matches ewither the 'retweet' or 'unretweeted' image
+        //to go thru the if statement, check to see what image is set in the retweet button
+        if(toBeRetweeted){
+            TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {
+                self.setRetweeted(true)
+                print("successful Retweet")
+            }, failure: { (error) in print("Error is retweeting: \(error)")})
+        }else{
+            TwitterAPICaller.client?.unretweet(tweetId: tweetId, success: {
+                self.setRetweeted(false)
+                print("successful UN-Retweet")
+                
+            }, failure: { (error) in print("Error is retweeting: \(error)")})
+        }
     }
     
     func setRetweeted(_ isRetweeted:Bool) {
+        print("set retweet")
         if (isRetweeted) {
+            print("Retweeted")
             retweetButton.setImage(UIImage(named: "twitter_retweet_green"), for: UIControl.State.normal)
             retweetButton.isEnabled = false
         } else {
+            print("unretweeeet")
             retweetButton.setImage(UIImage(named: "twitter_retweet_gray"), for: UIControl.State.normal)
             retweetButton.isEnabled = true
         }
@@ -43,7 +74,9 @@ class TweetCellTableViewCell: UITableViewCell {
     
     func setFavorite(_ isFavorited:Bool) {
         favorited = isFavorited
+        print("set favorited")
         if (favorited) {
+            print("Favorited")
             favButton.setImage(UIImage(named: "twitter_heart_red"), for: UIControl.State.normal)
         }
         else {
