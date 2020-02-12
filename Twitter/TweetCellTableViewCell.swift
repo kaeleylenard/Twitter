@@ -28,8 +28,18 @@ class TweetCellTableViewCell: UITableViewCell {
         }
     }
     @IBAction func retweet(_ sender: Any) {
+        TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {self.setRetweeted(true)}, failure: { (error) in print("Error is retweeting: \(error)")})
     }
     
+    func setRetweeted(_ isRetweeted:Bool) {
+        if (isRetweeted) {
+            retweetButton.setImage(UIImage(named: "twitter_retweet_green"), for: UIControl.State.normal)
+            retweetButton.isEnabled = false
+        } else {
+            retweetButton.setImage(UIImage(named: "twitter_retweet_gray"), for: UIControl.State.normal)
+            retweetButton.isEnabled = true
+        }
+    }
     
     func setFavorite(_ isFavorited:Bool) {
         favorited = isFavorited
